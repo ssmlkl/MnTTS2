@@ -1,4 +1,4 @@
-name: mntts3
+name: mntts2
 channels:
   - defaults
 dependencies:

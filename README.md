@@ -65,6 +65,63 @@ The preprocessing has two steps:
     - Compute the mean and standard deviation of multiple features from the **training** split
 2. Standardize mel spectrogram based on computed statistics
 
+Please note that you will also need to check the mntts process(/home/anaconda3/envs/mntts2/lib/python3.8/site-packages/tensorflow_tts/processor/mntts.py) before you start. Since tacotron2 needs to read mntts2/spk_spkID/train.txt and fastspeech2 needs to read mntts2/train.txt. Here is an example modification:
+
+Before you are ready to start fastspeech2, in the MNTTSProcessor class, you should modify mntts.py to look like the following code block:
+```
+positions = {
+        "speaker_name": 0,
+        "wave_file": 1,
+        "text": 2,
+        "text_norm": 2, 
+    }
+    train_f_name: str = "train.txt"
+
+    def create_items(self):
+        if self.data_dir:
+            with open(
+                    os.path.join(self.data_dir, self.train_f_name), encoding="utf-8"
+            ) as f:
+                self.items = [self.split_line(self.data_dir, line, "|") for line in f]
+
+    def split_line(self, data_dir, line, split):
+        parts = line.strip().split(split)
+        wave_file = parts[self.positions["wave_file"]]
+        text_norm = parts[self.positions["text_norm"]]
+        #tacotron格式
+        #wav_path = os.path.join(data_dir, "wavs", f"{wave_file}.wav")
+        speaker_name = parts[self.positions["speaker_name"]]
+        wav_path = os.path.join(data_dir,speaker_name,f"{wave_file}.wav")
+        
+        return text_norm, wav_path, speaker_name
+```
+And if you want to train tacotron2, you need modify mntts.py to look like the following code block:
+```
+    positions = {
+        "wave_file": 0,
+        "text": 1,
+        "text_norm": 1,
+    }
+    train_f_name: str = "spk_01_train.txt"
+
+    def create_items(self):
+        if self.data_dir:
+            with open(
+                    os.path.join(self.data_dir, self.train_f_name), encoding="utf-8"
+            ) as f:
+                self.items = [self.split_line(self.data_dir, line, "|") for line in f]
+
+    def split_line(self, data_dir, line, split):
+        parts = line.strip().split(split)
+        wave_file = parts[self.positions["wave_file"]]
+        text_norm = parts[self.positions["text_norm"]]
+        wav_path = os.path.join(data_dir, "wavs", f"{wave_file}.wav")
+        speaker_name = "mntts"
+        return text_norm, wav_path, speaker_name
+
+```
+After completing the above work, you are ready to start the tacotron2 work officially.
+
 To reproduce the steps above:
 ```
 tensorflow-tts-preprocess \
@@ -95,6 +152,7 @@ This example code show you how to train Tactron-2 from scratch with Tensorflow 2
 
   
 Take speaker 01 for example:
+First you need to refer to the instructions in 2) and modify the mntts.py file.
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/tacotron2/train_tacotron2.py \
@@ -187,6 +245,8 @@ After completing the extraction of the durations of the three speakers, the dura
 ## 5) Training FastSpeech2 from scratch with MnTTS dataset
 
 Based on the script [`train_fastspeech2.py`](https://github.com/dathudeptrai/TensorFlowTTS/blob/master/examples/fastspeech2/train_fastspeech2.py).
+
+
 
 Take speaker 01 for example:
 ```

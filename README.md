@@ -45,10 +45,10 @@ Prepare our MnTTS2 dataset in the following format:
 |       |- spk_03_train.txt
 ```
 
-Where `spk_ID_train.txt` has the following format: `uttid|transcription`. This is a ljspeech-like format.
-And `train.txt` has the following format: `spk_id|uttid|transcription`.
+Where `spk_spkID_train.txt` has the following format: `uttID|transcription`. This is a ljspeech-like format.
+And `train.txt` has the following format: `spkID|uttID|transcription`.
 
-[The complete dataset is available from our multilingual corpus website](http://mglip.com/corpus/corpus_detail.html?corpusid=20220819185345).
+[The complete dataset is available from our multilingual corpus website](http://mglip.com/corpus/corpus_detail.html?corpusid=20221106113633).
 
 
 ## 2) Tacotron2 Preprocessing For Each Speaker

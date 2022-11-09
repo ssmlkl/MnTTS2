@@ -51,7 +51,7 @@ And `train.txt` has the following format: `spkID|uttID|transcription`.
 [The complete dataset is available from our multilingual corpus website](http://mglip.com/corpus/corpus_detail.html?corpusid=20221106113633).
 
 
-## 2) Tacotron2 Preprocessing For Each Speaker
+## 2) Tacotron2 Preprocessing for each speaker
 
 The preprocessing has two steps:
 
@@ -84,7 +84,7 @@ tensorflow-tts-normalize \
 
 
 
-## 3) Training TacoTron2 from scratch with MnTTS dataset
+## 3) Training TacoTron2 from scratch with MnTTS dataset for each speaker
 
 Based on the script [`train_tacotron2.py`](https://github.com/TensorSpeech/TensorFlowTTS/blob/master/examples/tacotron2/train_tacotron2.py).
 
@@ -152,7 +152,8 @@ CUDA_VISIBLE_DEVICES=0 python examples/tacotron2/extract_duration.py \
 
 To extract postnets for training vocoder, follow above steps but with `extract_postnets.py`
 
-## 4) After completing the extraction of the durations of the three speakers, the durations in the training and test sets of each speaker are collated together.
+## 4) Collating durations
+After completing the extraction of the durations of the three speakers, the durations in the training and test sets of each speaker are collated together.
 
 ```
 |- mntts2/
@@ -218,7 +219,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2/train_fastspeech2.py \
 ```
 
 
-## 5) Vocoder Training For Each Speaker
+## 6) Vocoder Training For Each Speaker
 
 
 Take speaker 01 for example.
@@ -248,7 +249,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/hifigan/train_hifigan.py \
   --resume ./examples/hifigan/exp/train.hifigan.v1.spk_01/checkpoints/ckpt-100000
 ```
 
-## 6) MnTTS Model Inference
+## 7) MnTTS Model Inference
 
 You can follow below example command line to generate synthesized speech for given text in 'prediction/spk_01/inference.txt' using Griffin-Lim and trained HiFi-GAN vocoder:
 

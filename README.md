@@ -95,7 +95,7 @@ After completing the above work, you are ready to start the tacotron2 work offic
 
 To reproduce the steps above:
 ```
-tensorflow-tts-preprocess \
+CUDA_VISIBLE_DEVICES=0 tensorflow-tts-preprocess \
   --rootdir ./MnTTS2/spk_01 \
   --outdir ./tacotron2_dump/spk_01 \
   --config preprocess/mntts2_preprocess.yaml \
@@ -103,7 +103,7 @@ tensorflow-tts-preprocess \
 ```
 
 ```
-tensorflow-tts-normalize \
+CUDA_VISIBLE_DEVICES=0 tensorflow-tts-normalize \
   --rootdir ./tacotron2_dump/spk_01 \
   --outdir ./tacotron2_dump/spk_01 \
   --config preprocess/mntts2_preprocess.yaml \

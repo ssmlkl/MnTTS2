@@ -1,6 +1,7 @@
 # MnTTS2: An Open-Source Multi-Speaker Mongolian Text-to-Speech Synthesis Dataset
  
 ## Introduction
+This is the experimental description of MnTTS2.
 
 ## 0) Environment Preparation
 
@@ -52,6 +53,7 @@ And `train.txt` has the following format: `spkID|uttID|transcription`.
 
 
 ## 2) Tacotron2 Preprocessing for each speaker
+Take speaker 01 for example.
 
 The preprocessing has two steps:
 
@@ -92,7 +94,7 @@ Based on the script [`train_tacotron2.py`](https://github.com/TensorSpeech/Tenso
 This example code show you how to train Tactron-2 from scratch with Tensorflow 2 based on custom training loop and tf.function. 
 
   
-Here is an example command line to training TacoTron2 from scratch:
+Take speaker 01 for example:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/tacotron2/train_tacotron2.py \
@@ -158,7 +160,11 @@ After completing the extraction of the durations of the three speakers, the dura
 ```
 |- mntts2/
 |   |- durations
-|       |- spkID_1_uttID-durations.npy
+|       |- 01_1_uttID-durations.npy
+|       |- ......
+|       |- 02_1_uttID-durations.npy
+|       |- ......
+|       |- 03_1_uttID-durations.npy
 |       |- ......
 |   |- train.txt
 |   |- spk_01/
@@ -182,7 +188,7 @@ After completing the extraction of the durations of the three speakers, the dura
 
 Based on the script [`train_fastspeech2.py`](https://github.com/dathudeptrai/TensorFlowTTS/blob/master/examples/fastspeech2/train_fastspeech2.py).
 
-Here is an example command line to training FastSpeech2 from scratch:
+Take speaker 01 for example:
 ```
 CUDA_VISIBLE_DEVICES=0 tensorflow-tts-preprocess \
   --rootdir ./mntts2 \
@@ -190,6 +196,8 @@ CUDA_VISIBLE_DEVICES=0 tensorflow-tts-preprocess \
   --config ./preprocess/mntts_preprocess.yaml \
   --dataset mntts
 ```
+
+
 ```
 CUDA_VISIBLE_DEVICES=0 tensorflow-tts-normalize \
   --rootdir ./fastspeech2_dump \
@@ -198,6 +206,8 @@ CUDA_VISIBLE_DEVICES=0 tensorflow-tts-normalize \
   --dataset mntts
 ```
 
+
+Run fix mismatch to fix few frames difference in audio and duration files
 ```
 CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
   --base_path ./fastspeech2_dump \
@@ -205,6 +215,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
   --dur_path ./mntts2/durations/
 ```
 
+Change below example command line to match your dataset and run:
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2/train_fastspeech2.py \
   --train-dir ./fastspeech2_dump/train/ \
@@ -223,6 +234,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2/train_fastspeech2.py \
 
 
 Take speaker 01 for example.
+
 First, you need training generator with only stft loss:
 
 ```bash

@@ -278,7 +278,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
 
 Change below example command line to match your dataset and run:
 ```bash
-CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2/train_fastspeech2.py \
+CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/train_fastspeech2.py \
   --train-dir ./fastspeech2_dump/train/ \
   --dev-dir ./fastspeech2_dump/valid/ \
   --outdir ./examples/fastspeech2/exp/train.fastspeech2.v1/ \
@@ -327,7 +327,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/hifigan/train_hifigan.py \
 You can follow below example command line to generate synthesized speech for a given text in 'prediction/spk_01/inference.txt' using Griffin-Lim and trained HiFi-GAN vocoder, take speaker 01 for example:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2/mntts2_inference_fastspeech2.py \
+CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fastspeech2.py \
     --outdir prediction/spk_01/MnTTS_inference \
     --infile prediction/spk_01/inference.txt  \
     --tts_ckpt examples/fastspeech2/exp/train.fastspeech2.v1/checkpoints/model-200000.h5 \

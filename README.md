@@ -324,26 +324,26 @@ CUDA_VISIBLE_DEVICES=0 python examples/hifigan/train_hifigan.py \
 
 ## 7) MnTTS Model Inference
 
-You can follow below example command line to generate synthesized speech for given text in 'prediction/spk_01/inference.txt' using Griffin-Lim and trained HiFi-GAN vocoder:
+You can follow below example command line to generate synthesized speech for a given text in 'prediction/spk_01/inference.txt' using Griffin-Lim and trained HiFi-GAN vocoder, take speaker 01 for example:
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2/inference_fastspeech2.py \
-    --outdir prediction/MnTTS_inference \
-    --infile dump_mntts/inference.txt  \
+    --outdir prediction/spk_01/MnTTS_inference \
+    --infile prediction/spk_01/inference.txt  \
     --tts_ckpt examples/fastspeech2/exp/train.fastspeech2.v1/checkpoints/model-200000.h5 \
-    --vocoder_ckpt  examples/hifigan/exp/train.hifigan.v1/checkpoints/generator-200000.h5 \
-    --stats_path dump_mntts/stats.npy \
+    --vocoder_ckpt  examples/hifigan/exp/train.hifigan.v1.spk_01/checkpoints/generator-200000.h5 \
+    --stats_path fastspeech2_dump/stats.npy \
     --dataset_config preprocess/mntts_preprocess.yaml \
     --tts_config examples/fastspeech2/conf/fastspeech2.v1.yaml \
     --vocoder_config examples/hifigan/conf/hifigan.v1.yaml \
-    --lan_json dump_mntts/mntts_mapper.json 
-    ----speaker_id 0
+    --lan_json fastspeech2_dump/mntts_mapper.json 
+    --speaker_id 0
 ```
 
-You can find pre-trained models in the [Links](#Links) section.
 
 
-The synthesized speech will save to `prediction/MnTTS_inference` folder.
+
+The synthesized speech will save to `prediction/spk_01/MnTTS_inference` folder.
 
 
 ## Links

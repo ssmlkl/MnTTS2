@@ -86,8 +86,8 @@ Before starting tacotron work, you need modify mntts.py to look like the followi
         parts = line.strip().split(split)
         wave_file = parts[self.positions["wave_file"]]
         text_norm = parts[self.positions["text_norm"]]
-        wav_path = os.path.join(data_dir, "wavs", f"{wave_file}.wav")
-        speaker_name = "mntts"
+        wav_path = os.path.join(data_dir, f"{wave_file}.wav")
+        speaker_name = "spk_01"
         return text_norm, wav_path, speaker_name
 
 ```
@@ -239,9 +239,7 @@ positions = {
     def split_line(self, data_dir, line, split):
         parts = line.strip().split(split)
         wave_file = parts[self.positions["wave_file"]]
-        text_norm = parts[self.positions["text_norm"]]
-        #tacotron格式
-        #wav_path = os.path.join(data_dir, "wavs", f"{wave_file}.wav")
+        text_norm = parts[self.positions["text_norm"]
         speaker_name = parts[self.positions["speaker_name"]]
         wav_path = os.path.join(data_dir,speaker_name,f"{wave_file}.wav")
         

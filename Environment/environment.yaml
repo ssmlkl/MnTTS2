@@ -106,4 +106,4 @@ dependencies:
     - werkzeug
     - wrapt
     - zipp
-prefix: /home/anaconda3/envs/mntts3
+prefix: /home/anaconda3/envs/mntts2

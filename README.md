@@ -282,10 +282,12 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/train_fastspeech2.py \
   --outdir ./examples/fastspeech2/exp/train.fastspeech2.v1/ \
   --config ./examples/fastspeech2/conf/fastspeech2.v1.yaml \
   --use-norm 1 \
-  --f0-stat ./dump_mntts/stats_f0.npy \
-  --energy-stat ./dump_mntts/stats_energy.npy \
+  --f0-stat ./fastspeech2_dump/stats_f0.npy \
+  --energy-stat ./fastspeech2_dump/stats_energy.npy \
   --mixed_precision 1 \
-  --resume ""
+  --dataset_config ./preprocess/mntts_preprocess.yaml \
+  --dataset_stats ./fastspeech2_dump/stats.npy \
+  --dataset_mapping ./fastspeech2_dump/mntts_mapper.json
 ```
 
 

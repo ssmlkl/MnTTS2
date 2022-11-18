@@ -221,7 +221,7 @@ Take speaker 01 for example:
 
 First you need to refer to the instructions in 2) and modify the mntts.py file. Before you are ready to start fastspeech2,  you should modify mntts.py in  MNTTSProcessor class to look like the following code block:
 ```
-positions = {
+    positions = {
         "speaker_name": 0,
         "wave_file": 1,
         "text": 2,
@@ -239,7 +239,7 @@ positions = {
     def split_line(self, data_dir, line, split):
         parts = line.strip().split(split)
         wave_file = parts[self.positions["wave_file"]]
-        text_norm = parts[self.positions["text_norm"]
+        text_norm = parts[self.positions["text_norm"]]
         speaker_name = parts[self.positions["speaker_name"]]
         wav_path = os.path.join(data_dir,speaker_name,f"{wave_file}.wav")
         

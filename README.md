@@ -346,12 +346,12 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 ```
 
 ## 8）Synthesized Demo Audio
-<audio src="https://github.com/ssmlkl/MnTTS2/blob/master/DemoAudios/spk_F1/01_1_000029-gl.wav"></audio>
+<audio src="https://github.com/ssmlkl/MnTTS2/blob/master/DemoAudios/spk_F1/01_1_000029-gl.wav">F1 GL</audio>
 
 
 
 
-The synthesized speech will save to `prediction/spk_01/MnTTS_inference` folder.
+
 
 
 ## Links

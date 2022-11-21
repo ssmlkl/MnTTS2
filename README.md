@@ -352,10 +352,12 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 
 
 
-Part of the synthesised audition audio：[DemoAudios]:(https://github.com/ssmlkl/MnTTS2/tree/master/DemoAudios)
-[//]: # (Please kindly cite the following paper if you use this code repository in your work,)
-[//]: # (```)
-[//]: # (```)
+20 audio tracks synthesised for three speakers. Griffin-Lim vocoder, HiFi-GAN vocoder and Ground-Tuth are included, with corresponding texts given for reference：
+[Inference Audios](https://github.com/ssmlkl/MnTTS2/tree/master/DemoAudios)
+
+Our trained models, including Tacotron2, FastSpeech2 and HiFi-GAN：
+[Pre-trained modules]([Please kindly cite the following paper if you use this code repository in your work,](https://drive.google.com/drive/folders/1R4UQXpavpuPqFGLxC8GB8LTaCd6gMXF6?usp=share_link))
+
 
 
 

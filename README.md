@@ -27,7 +27,7 @@ conda activate mntts2
 
 ## 1) Prepare MnTTS Dataset
 
-Prepare our MnTTS2 dataset in the following format:
+Prepare our MnTTS2 dataset in the following format.
 ```
 |- mntts2/
 |   |- train.txt
@@ -68,7 +68,7 @@ The preprocessing has two steps:
 2. Standardize mel spectrogram based on computed statistics
 
 Please note that you will also need to check the mntts process(/home/anaconda3/envs/mntts2/lib/python3.8/site-packages/tensorflow_tts/processor/mntts.py) before you start. Since tacotron2 needs to read mntts2/spk_spkID/train.txt and fastspeech2 needs to read mntts2/train.txt. Here is an example modification:
-Before starting tacotron work, you need modify mntts.py to look like the following code block:
+Before starting tacotron work, you need modify mntts.py to look like the following code block.
 ```
     positions = {
         "wave_file": 0,
@@ -112,8 +112,6 @@ CUDA_VISIBLE_DEVICES=0 tensorflow-tts-normalize \
   --dataset mntts
 ```
 
- 
-
 
 
 ## 3) Training TacoTron2 from scratch with MnTTS dataset for each speaker
@@ -146,14 +144,14 @@ In case you want to resume the training progress, please following below example
 --resume ./examples/tacotron2/exp/train.tacotron2.v1.spk_01/checkpoints/ckpt-100000
 ```
 
-If you want to finetune a model, use `--pretrained` like this with your model filename
+If you want to finetune a model, use `--pretrained` like this with your model filename:
 ```bash
 --pretrained pretrained.h5
 ```
 
 Extract duration from alignments for FastSpeech
 
-You may need to extract durations for student models like fastspeech. Here we use teacher forcing with window masking trick to extract durations from alignment maps:
+You may need to extract durations for student models like fastspeech. Here we use teacher forcing with window masking trick to extract durations from alignment maps.
 
 Extract for valid set:
 
@@ -219,7 +217,7 @@ After completing the extraction of the durations of the three speakers, the dura
 
 Based on the script [`train_fastspeech2.py`](https://github.com/dathudeptrai/TensorFlowTTS/blob/master/examples/fastspeech2/train_fastspeech2.py).
 
-First you need to refer to the instructions in 2) and modify the mntts.py file. Before you are ready to start fastspeech2,  you should modify mntts.py in  MNTTSProcessor class to look like the following code block:
+First you need to refer to the instructions in 2) and modify the mntts.py file. Before you are ready to start fastspeech2,  you should modify mntts.py in  MNTTSProcessor class to look like the following code block.
 ```
     positions = {
         "speaker_name": 0,
@@ -266,7 +264,7 @@ CUDA_VISIBLE_DEVICES=0 tensorflow-tts-normalize \
 ```
 
 
-Run fix mismatch to fix few frames difference in audio and duration files
+Run fix mismatch to fix few frames difference in audio and duration files.
 ```
 CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
   --base_path ./fastspeech2_dump \
@@ -281,7 +279,7 @@ python toolkit/fix.py
 ```
 
 
-Change below example command line to match your dataset and run:
+Change below example command line to match your dataset and run.
 ```bash
 CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/train_fastspeech2.py \
   --train-dir ./fastspeech2_dump/train/ \
@@ -355,7 +353,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 
 
 20 audio tracks synthesised for three speakers. Griffin-Lim vocoder, HiFi-GAN vocoder and Ground-Tuth are included, with corresponding texts given for reference：
-[Inference Audios](https://github.com/ssmlkl/MnTTS2/tree/master/DemoAudios)
+[Inference Audios](https://drive.google.com/drive/folders/1xu672DyctsRIhtAkI8a9URHLj7Sv_YRd?usp=share_link)
 
 Our trained models, including Tacotron2, FastSpeech2 and HiFi-GAN：
 [Pre-trained modules](https://drive.google.com/drive/folders/1R4UQXpavpuPqFGLxC8GB8LTaCd6gMXF6?usp=share_link)

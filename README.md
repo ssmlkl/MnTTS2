@@ -352,7 +352,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 
 
 
-[//]: # (## Citation)
+Part of the synthesised audition audio：[DemoAudios]:(https://github.com/ssmlkl/MnTTS2/tree/master/DemoAudios)
 [//]: # (Please kindly cite the following paper if you use this code repository in your work,)
 [//]: # (```)
 [//]: # (```)

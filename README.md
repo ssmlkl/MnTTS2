@@ -2,7 +2,8 @@
  
 ## Introduction
 This is the experimental description of MnTTS2.
-Kailin Liang,[Bin Liu](https://github.com/SolitaryWayfarer),[Yifan Hu](https://github.com/walker-hyf), [Rui Liu *](https://ttslr.github.io/), Feilong Bao, Guanglai Gao.
+
+Kailin Liang, [Bin Liu](https://github.com/SolitaryWayfarer), [Yifan Hu](https://github.com/walker-hyf), [Rui Liu *](https://ttslr.github.io/), Feilong Bao, Guanglai Gao.
 
 ## 0) Environment Preparation
 

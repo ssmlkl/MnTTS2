@@ -356,7 +356,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 [Inference Audios](https://github.com/ssmlkl/MnTTS2/tree/master/DemoAudios)
 
 Our trained models, including Tacotron2, FastSpeech2 and HiFi-GAN：
-[Pre-trained modules]([Please kindly cite the following paper if you use this code repository in your work,](https://drive.google.com/drive/folders/1R4UQXpavpuPqFGLxC8GB8LTaCd6gMXF6?usp=share_link))
+[Pre-trained modules](https://drive.google.com/drive/folders/1R4UQXpavpuPqFGLxC8GB8LTaCd6gMXF6?usp=share_link)
 
 
 

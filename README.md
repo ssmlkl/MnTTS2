@@ -217,8 +217,6 @@ After completing the extraction of the durations of the three speakers, the dura
 
 Based on the script [`train_fastspeech2.py`](https://github.com/dathudeptrai/TensorFlowTTS/blob/master/examples/fastspeech2/train_fastspeech2.py).
 
-Take speaker 01 for example:
-
 First you need to refer to the instructions in 2) and modify the mntts.py file. Before you are ready to start fastspeech2,  you should modify mntts.py in  MNTTSProcessor class to look like the following code block:
 ```
     positions = {
@@ -245,7 +243,7 @@ First you need to refer to the instructions in 2) and modify the mntts.py file. 
         
         return text_norm, wav_path, speaker_name
 ```
-After completing the above work, you are ready to start the tacotron2 work officially.
+After completing the above work, you are ready to start the FastSpeech2 work officially.
 
 
 ```
@@ -273,6 +271,13 @@ CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
   --trimmed_dur_path ./mntts2/trimmed-durations \
   --dur_path ./mntts2/durations/
 ```
+
+
+Checking the dimensional alignment of ids and durations.
+```
+python fix.py
+```
+
 
 Change below example command line to match your dataset and run:
 ```bash

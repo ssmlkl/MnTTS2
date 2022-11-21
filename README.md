@@ -162,7 +162,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/tacotron2/extract_duration.py \
   --checkpoint ./examples/tacotron2/exp/train.tacotron2.v1.spk_01/checkpoints/model-100000.h5 \
   --use-norm 1 \
   --config ./examples/tacotron2/conf/tacotron2.v1.yaml \
-  --batch-size 32
+  --batch-size 32 \
   --win-front 3 \
   --win-back 3
 ```
@@ -176,7 +176,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/tacotron2/extract_duration.py \
   --checkpoint ./examples/tacotron2/exp/train.tacotron2.v1.spk_01/checkpoints/model-100000.h5 \
   --use-norm 1 \
   --config ./examples/tacotron2/conf/tacotron2.v1.yaml \
-  --batch-size 32
+  --batch-size 32 \
   --win-front 3 \
   --win-back 3
 ```
@@ -269,7 +269,7 @@ Run fix mismatch to fix few frames difference in audio and duration files.
 CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
   --base_path ./fastspeech2_dump \
   --trimmed_dur_path ./mntts2/trimmed-durations \
-  --dur_path ./mntts2/durations/
+  --dur_path ./mntts2/durations
 ```
 
 
@@ -341,7 +341,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
     --dataset_config preprocess/mntts_preprocess.yaml \
     --tts_config examples/fastspeech2/conf/fastspeech2.v1.yaml \
     --vocoder_config examples/hifigan/conf/hifigan.v1.yaml \
-    --lan_json fastspeech2_dump/mntts_mapper.json 
+    --lan_json fastspeech2_dump/mntts_mapper.json \
     --speaker_id 0
 ```
 

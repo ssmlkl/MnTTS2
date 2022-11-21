@@ -346,8 +346,9 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 ```
 
 ## 8）Synthesized Demo Audio
-<audio id="audio" controls="" preload="none">
-      <source id="wav" src="[音频地址](https://github.com/ssmlkl/MnTTS2/blob/master/DemoAudios/spk_F1/01_1_000029-gl.wav)">
+F1
+<audio id="audio" controls="" preload="none">F1 in
+      <source id="wav" src="https://github.com/ssmlkl/MnTTS2/blob/master/DemoAudios/spk_F1/01_1_000029-gl.wav">
 </audio>
 
 

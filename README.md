@@ -275,7 +275,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/mfa_extraction/fix_mismatch.py \
 
 Checking the dimensional alignment of ids and durations.
 ```
-python fix.py
+python toolkit/fix.py
 ```
 
 

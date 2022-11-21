@@ -345,6 +345,9 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
     --speaker_id 0
 ```
 
+## 8）Synthesized Demo Audio
+<audio src="mp3文件链接地址"></audio>
+
 
 
 

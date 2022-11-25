@@ -356,6 +356,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 [Inference Audios](https://drive.google.com/drive/folders/1xu672DyctsRIhtAkI8a9URHLj7Sv_YRd?usp=share_link)
 
 Please contact the Author to access the Pre-trained Models.
+liangkailin98@foxmail.com
 
 
 

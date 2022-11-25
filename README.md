@@ -355,10 +355,7 @@ CUDA_VISIBLE_DEVICES=0 python examples/fastspeech2_mntts2/mntts2_inference_fasts
 20 audio tracks synthesised for three speakers. Griffin-Lim vocoder, HiFi-GAN vocoder and Ground-Tuth are included, with corresponding texts given for reference：
 [Inference Audios](https://drive.google.com/drive/folders/1xu672DyctsRIhtAkI8a9URHLj7Sv_YRd?usp=share_link)
 
-Our trained models, including Tacotron2, FastSpeech2 and HiFi-GAN：
-[Pre-trained modules](https://drive.google.com/drive/folders/1R4UQXpavpuPqFGLxC8GB8LTaCd6gMXF6?usp=share_link)
-
-
+Please contact the Author to access the Pre-trained Models.
 
 
 

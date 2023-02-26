@@ -23,7 +23,7 @@ python setup.py build_ext --inplace
 ```sh
 
 # MnTTS2
-python train_ms.py -c configs/mntts2.json -m vctk_base
+python train_ms.py -c configs/mntts2.json -m mntts2
 ```
 
 

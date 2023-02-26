@@ -13,7 +13,7 @@ cd monotonic_align
 python setup.py build_ext --inplace
 
 # Preprocessing (g2p) for MnTTS2.
-# python preprocess.py --text_index 2 --filelists filelists/train.txt filelists/valid.txt filelists/test.txt
+python preprocess.py --text_index 2 --filelists filelists/train.txt filelists/valid.txt filelists/test.txt
 ```
 
 

@@ -8,7 +8,7 @@ Kailin Liang, [Bin Liu](https://github.com/SolitaryWayfarer), [Yifan Hu](https:/
 
 ## Links
 20 audio tracks synthesised for three speakers. Griffin-Lim vocoder, HiFi-GAN vocoder, VITS and Ground-Tuth are included, with corresponding texts given for reference：
-[Inference Audios](https://drive.google.com/drive/folders/1xu672DyctsRIhtAkI8a9URHLj7Sv_YRd?usp=share_link)
+[Inference Audios](https://drive.google.com/drive/folders/1dpSZiI6w04WYWgc2nCrjv7nOVA2kX0fA?usp=share_link)
 
 Please contact the Author to access the Pre-trained Models.
 liangkailin98@foxmail.com

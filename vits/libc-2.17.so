@@ -1,0 +1,15 @@
+GNU C Library (GNU libc) stable release version 2.18, by Roland McGrath et al.
+Copyright (C) 2013 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Compiled by GNU CC version 4.8.5 20150623 (Red Hat 4.8.5-28).
+Compiled on a Linux 3.10.0 system on 2021-03-25.
+Available extensions:
+	crypt add-on version 2.1 by Michael Glad and others
+	GNU Libidn by Simon Josefsson
+	Native POSIX Threads Library by Ulrich Drepper et al
+	BIND-8.2.3-T5B
+libc ABIs: UNIQUE IFUNC
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/libc/bugs.html>.
